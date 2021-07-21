@@ -24,6 +24,7 @@
     }
 
     .panels {
+      display: flex;
       min-height: 100vh;
       overflow: hidden;
     }
@@ -43,6 +44,10 @@
       font-size: 20px;
       background-size: cover;
       background-position: center;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      flex-direction: column;
     }
 
     .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
@@ -56,6 +61,10 @@
       margin: 0;
       width: 100%;
       transition: transform 0.5s;
+      flex: 1 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .panel p {
@@ -68,9 +77,26 @@
     .panel p:nth-child(2) {
       font-size: 4em;
     }
+    
+    .panel p:nth-child(1) {
+      transform: translateY(-100vh);
+    }
+
+    .panel.open p:nth-child(1) {
+      transform: translateY(0);
+    }
+
+    .panel p:nth-child(3) {
+      transform: translateY(100vh);
+    }
+
+    .panel.open p:nth-child(3) {
+      transform: translateY(0);
+    }
 
     .panel.open {
       font-size: 40px;
+      flex: 5;
     }
 
   </style>
@@ -104,7 +130,7 @@
     </div>
   </div>
 
-  <script>
+  <script src="./main.js"></script>
 
   </script>
 
